@@ -1,0 +1,26 @@
+[
+        {
+            "id": 1,
+            "fullName": "Muhammad",
+            "email": "Muhamamd@gmail.com",
+            "city": "sulaymaniyah",
+            "phone": "0123456789",
+            "password": "weird"
+        },
+        {
+            "id": 2,
+            "fullName": "Milad",
+            "email": "Milad@gmail.com",
+            "city": "ranya",
+            "phone": "0123456789",
+            "password": "weird2"
+        },
+        {
+            "id": 3,
+            "fullName": "Aland",
+            "email": "Aland@gmail.com",
+            "city": "halabja",
+            "phone": "0123456789",
+            "password": "weird3"
+        }
+    ]
