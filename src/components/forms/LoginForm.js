@@ -1,20 +1,46 @@
 import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import data from "../data/users.json";
+import Axios from "axios";
 
 const LoginForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   function loginHandler(e) {
-    // e.preventDefault();
-    // const enteredEmail = emailInputRef.current.value;
-    // const enteredPassword = passwordInputRef.current.value;
-    // const currentUser = {
-    //   email: enteredEmail,
-    //   password: enteredPassword,
-    // };
+    e.preventDefault();
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+    const currentUser = {
+      email: enteredEmail,
+      password: enteredPassword,
+    };
+
+    // const ref = db.ref(
+    //   "https://myapp-94507-default-rtdb.firebaseio.com/users.json"
+    // );
+    // const query = ref.orderChildBy("email").equalTo(enteredEmail);
+    // query.once("value", function (snapshot) {
+    //   console.log("exists");
+    // });
+
+    // fetch(
+    //   "https://myapp-94507-default-rtdb.firebaseio.com/users.json",
+    //   {}
+    // ).then(() => {
+    //   ref
+    //     .child("users")
+    //     .orderByChild("email")
+    //     .equalTo(enteredEmail)
+    //     .once("value", (snapshot) => {
+    //       if (snapshot.exists()) {
+    //         console.log(snapshot.val());
+    //       } else {
+    //         console.log("email does not exist!");
+    //       }
+    //     });
+    // });
+
     // if (data.includes(enteredEmail)) {
     //   navigate("/api/success", { replace: true });
     // } else {
