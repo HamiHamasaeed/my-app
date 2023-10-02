@@ -3,19 +3,27 @@ import SignUpForm from "../components/forms/SignUpForm";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-  const users = [];
   const navigate = useNavigate();
 
   function addUserHandler(userData) {
-    const user = JSON.stringify(userData);
-    users.push(user);
-    navigate("/api/login", { replace: true });
-    console.log(users);
+    fetch("https://myapp-94507-default-rtdb.firebaseio.com/users.json", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
+      .then(() => {
+        navigate("/api/login", { replace: true });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }
 
   return (
     <div className="">
-      <h1> </h1>
       <SignUpForm onSignUp={addUserHandler} />
     </div>
   );
